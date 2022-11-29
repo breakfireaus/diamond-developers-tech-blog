@@ -1,27 +1,37 @@
 {
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "cookies": "^0.8.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
-    "mysql2": "^2.3.3"
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "router": "^1.3.7",
+    "sequelize": "^6.25.8"
   },
+
   "name": "diamond-developers-tech-blog",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/breakfireaus/diamond-developers-tech-blog.git"
   },
+
   "keywords": [],
   "author": "Matthew Younger-Chudnovsky",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/breakfireaus/diamond-developers-tech-blog/issues"
   },
+  
   "homepage": "https://github.com/breakfireaus/diamond-developers-tech-blog#readme",
   "description": "",
   "devDependencies": {
