@@ -30,7 +30,7 @@ userComment.init(
     article_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'article',
+        model: 'userArticle',
         key: 'id',
       },
     },
