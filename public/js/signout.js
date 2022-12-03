@@ -1,4 +1,4 @@
-const signoutButtonHandler = async () => {
+const signoutButtonHandlers = async () => {
     const response = await fetch('/api/users/signout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -13,5 +13,5 @@ const signoutButtonHandler = async () => {
   
   document
     .querySelector('#btn-signout')
-    .addEventListener('click', signoutButtonHandler);
+    .addEventListener('click', signoutButtonHandlers);
   
