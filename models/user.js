@@ -21,7 +21,7 @@ BlogUser.init(
       allowNull: false,
       unique: true,
       validate: {
-        len: [3, 30],
+        len: [8, 30],
       },
     },
     password: {
