@@ -7,9 +7,9 @@ router.get('/', (req, res) => {
     Comment.findAll({
         attributes: [
             'id',
-            'comment_text',
+            'user_content',
             'user_id',
-            'post_id',
+            'article_id',
             'created_at'
         ],
         order: [['created_at', 'DESC']]
@@ -26,8 +26,8 @@ router.post('/', withAuth, (req, res) => {
     console.log(req.session);
     if (req.session.loggedIn) {
         Comment.create({
-            comment_text: req.body.comment_text,
-            post_id: req.body.post_id,
+            user_content: req.body.user_content,
+            article_id: req.body.article_id,
             user_id: req.session.user_id
         })
             .then(dbCommentData => res.json(dbCommentData))

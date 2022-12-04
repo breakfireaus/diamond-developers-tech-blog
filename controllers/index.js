@@ -3,8 +3,8 @@ const routesForApi = require('./api');
 const routesForHomepage = require('./homeRoutes');
 const routesForDashboard = require('./dashboardRoutes');
 
-router.use('/api', routesForApi);
 router.use('/', routesForHomepage);
+router.use('/api', routesForApi);
 router.use('/dashboard', routesForDashboard);
 
 router.use((req, res) => {
