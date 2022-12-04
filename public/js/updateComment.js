@@ -1,38 +1,37 @@
-const updateArticleFormHandlers = async (event) => {
-    event.preventDefault();
-  
-    const id = document.getElementById('btn-save').getAttribute('data-id');
-    const articleTitle = document.getElementById('articleTitle').value.trim();
-    const articleContent = document.getElementById('articleContent').value.trim();
-  
-    if (id && articleTitle && articleContent) {
-      const response = await fetch(`/api/articles/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({ articleTitle, articleContent }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        console.log(err);
-        alert('Failed to update article.');
-      }
+const updateHandleCommentForm = async (event) => {
+  event.preventDefault();
+
+  const id = document.getElementById('btn-save').getAttribute('data-id');
+  const commentContent = document.getElementById('commentContent').value.trim();
+
+  if (id && commentContent) {
+    const response = await fetch(`/api/comments/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ commentContent }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
     } else {
-      alert('Title and Content fields may not be blank.')
+      console.log(err);
+      alert('Failed to update article.');
     }
-  };
-  
-  const cancelButtonHandlers = async () => {
-    document.location.replace('/dashboard');
+  } else {
+  alert('Content field may not be blank.')
   }
-  
-  document
-    .querySelector('.updateArticleForm')
-    .addEventListener('submit', updateArticleFormHandlers);
-  
-  document
-    .querySelector('.updateArticleForm')
-    .addEventListener('reset', cancelButtonHandlers);
+};
+
+const cancelHandlerButton = async () => {
+  window.history.back();
+}
+
+document
+  .querySelector('.updateCommentForm')
+  .addEventListener('submit', updateHandleCommentForm);
+
+document
+  .querySelector('.updateCommentForm')
+  .addEventListener('reset', cancelHandlerButton);
