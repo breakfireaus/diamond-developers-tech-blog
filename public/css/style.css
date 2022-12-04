@@ -143,9 +143,9 @@ h5 {
     text-align: end;
 }
 
-.btn-primary1,
-.btn-primary1:active,
-.btn-primary1:visited {
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
     color: var(--c-whitesmoke) !important;
     background-color: var(--c-raspberrysorbet);
     border: .2em solid var(--c-draspberrysorbet);
@@ -182,9 +182,9 @@ h5 {
     transform: scale(1.05);
 }
 
-.btn-warning1,
-.btn-warning1:active,
-.btn-warning1:visited {
+.btn-warning,
+.btn-warning:active,
+.btn-warning:visited {
     color: var(--c-whitesmoke) !important;
     background-color: var(--c-frenchblue);
     border: .2em solid var(--c-dfrenchblue);
@@ -194,7 +194,7 @@ h5 {
     cursor: pointer;
 }
 
-.btn-warning1:hover {
+.btn-warning:hover {
     background-color: var(--c-dfrenchblue);
     border: .2em solid var(--c-ddfrenchblue);
     box-shadow: 9px 16px 11px var(--c-shadow);
