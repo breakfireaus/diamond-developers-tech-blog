@@ -1,42 +1,32 @@
-const addButtonHandlers = async (event) => {
-    document.location.replace('dashboard/newArticle');
-  };
-  
-  const updateButtonHandlers = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-      document.location.replace(`/dashboard/updateArticle/${id}`);
+const signinHandlerForm = async (event) => {
+  event.preventDefault();
+
+  const username = document.querySelector('#username-signin').value.trim();
+  const password = document.querySelector('#password-signin').value.trim();
+
+  if (username && password) {
+    const response = await fetch('/api/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({ username, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/');
     } else {
-      alert('Update button has no data-id');
+      alert(response.statusText);
     }
-  };
-  
-  const deleteButtonHandlers = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/articles/${id}`, {
-        method: 'DELETE',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Fail to delete article');
-      }
-    } else {
-      alert('Delete button has no data-id');
-    }
-  };
-  
-  document
-    .querySelector('#btn-add')
-    .addEventListener('click', addButtonHandlers);
-  
-  document
-    .querySelectorAll('.btn-update')
-    .forEach(btn => btn.addEventListener('click', updateButtonHandlers));
-  
-  document
-    .querySelectorAll('.btn-delete')
-    .forEach(btn => btn.addEventListener('click', deleteButtonHandlers));
+  }
+};
+
+const signupHandlerButton = async () => {
+document.location.replace('/signup');
+};
+
+document
+.querySelector('.signinForm')
+.addEventListener('submit', signinHandlerForm);
+
+document
+.querySelector('#btn-signup')
+.addEventListener('submit', signupHandlerButton);
