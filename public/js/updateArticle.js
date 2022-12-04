@@ -1,4 +1,4 @@
-const updateArticleFormHandlers = async (event) => {
+const updateHandlerArticleForm = async (event) => {
     event.preventDefault();
   
     const id = document.getElementById('btn-save').getAttribute('data-id');
@@ -25,14 +25,14 @@ const updateArticleFormHandlers = async (event) => {
     }
   };
   
-  const cancelButtonHandlers = async () => {
+  const cancelHandlerButton = async () => {
     document.location.replace('/dashboard');
   }
   
   document
     .querySelector('.updateArticleForm')
-    .addEventListener('submit', updateArticleFormHandlers);
+    .addEventListener('submit', updateHandlerArticleForm);
   
   document
     .querySelector('.updateArticleForm')
-    .addEventListener('reset', cancelButtonHandlers);
+    .addEventListener('reset', cancelHandlerButton);
