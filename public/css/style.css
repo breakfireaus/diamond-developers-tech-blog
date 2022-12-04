@@ -1,23 +1,23 @@
 :root {
-    --c-silver: #c6b4ad;
-    --c-dslategray: #2e3136;
-    --c-ddslategray: #1d1f22;
-    --c-shadow: #644420;
-    --c-lshadow: #90612b;
-    --c-dwhitesmoke: #d6d0d0;
-    --c-whitesmoke: #f5f5f5;
-    --c-lwhitesmoke: #ffffff;
-    --c-lraspberrysorbet: #cd4a77;
-    --c-raspberrysorbet: #db2565;
-    --c-draspberrysorbet: #d31759;
+    --c-silver: #cab7b0;
+    --c-dslategray: #2a2d32;
+    --c-ddslategray: #17181b;
+    --c-shadow: #674722;
+    --c-lshadow: #94632b;
+    --c-dwhitesmoke: #dcd6d6;
+    --c-whitesmoke: #f7f5f5;
+    --c-lwhitesmoke: #faf2f2;
+    --c-lraspberrysorbet: #d24d7b;
+    --c-raspberrysorbet: #e02667;
+    --c-draspberrysorbet: #d51357;
     --c-ddraspberrysorbet: #c70448;
     --c-dddraspberrysorbet: #ac003c;
-    --c-marigold: #feae51;
-    --c-dmarigold: #e49b48;
-    --c-ddmarigold:#d38b38;
-    --c-frenchblue: #3078b4;
-    --c-dfrenchblue: #276292;
-    --c-ddfrenchblue: #1a4a70;
+    --c-marigold: #ffaf53;
+    --c-dmarigold: #eda24c;
+    --c-ddmarigold:#de923b;
+    --c-frenchblue: #347fbc;
+    --c-dfrenchblue: #28689d;
+    --c-ddfrenchblue: #1c507b;
     --c-white: #ffffff;
 }
 
@@ -32,28 +32,28 @@ body {
     height: 100vh;
 }
 
-.techblog-nav {
+.techblog-navigation {
     background-image: linear-gradient(var(--c-dslategray), var(--c-ddslategray));
 }
 
-.navbar-brand {
+.navbar-logo {
     font-family: 'Oswald', sans-serif;
     font-size: xx-large;
-    text-shadow: 0px .5px var(--c-lshadow);
+    text-shadow: 0.5px 1px var(--c-lshadow);
 }
 
-.custom-toggler .navbar-toggler-icon {
+.custom-toggles .navbar-toggles-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.custom-toggler.navbar-toggler {
+.custom-toggles .navbar-toggles {
     border-color: var(--c-raspberrysorbet);
     border-width: medium;
 } 
 
 main {
-    padding-top: 7rem;
-    padding-bottom: 8rem;
+    padding-top: 8rem;
+    padding-bottom: 9rem;
     width: 100vw;
 }
 
@@ -82,23 +82,23 @@ h5 {
 
 .my-articles {
     background-image: linear-gradient(var(--c-dslategray), var(--c-ddslategray));
-    padding: .5em;
-    border-radius: 5px;
+    padding: 1em;
+    border-radius: 6px;
 }
 
 .card {
     background: var(--c-whitesmoke);
-    transition: .4s transform cubic-bezier(.155,1.105,.295,1.12),.4s box-shadow,.4s -webkit-transform cubic-bezier(.155,1.105,.295,1.12); 
-    opacity: 0.95;
-    box-shadow: 5px 10px 25px rgb(100, 68, 32);
+    transition: .5s transform cubic-bezier(.155,1.105,.295,1.12),.4s box-shadow,.4s -webkit-transform cubic-bezier(.155,1.105,.295,1.12); 
+    opacity: 1;
+    box-shadow: 6px 11px 26px rgb(107, 74, 35);
     color: var(--c-ddslategray);
 }
 
 .card:hover {
     transform: scale(1.003);
     border-color: var(--c-whitesmoke);
-    opacity: 1;
-    box-shadow: 10px 15px 25px #644420;
+    opacity: 2;
+    box-shadow: 11px 16px 26px #644420;
 }
 
 .card-body {
@@ -106,7 +106,7 @@ h5 {
 }
 
 .card.view-card:hover {
-    opacity: 1;
+    opacity: 2;
 }
 
 .card-header {
@@ -124,22 +124,22 @@ h5 {
 
 .comments {
     background-color: var(--c-white);
-    border: 1px solid var(--c-dwhitesmoke);
-    padding: 1em;
+    border: 2px solid var(--c-dwhitesmoke);
+    padding: 2em;
 }
 
 .comment {
-    border-radius: 10px;
-    padding: 1em;
+    border-radius: 11px;
+    padding: 2em;
     background-color: var(--c-dwhitesmoke);
 }
 
 .edit-btns-comments {
     background-color: var(--c-dwhitesmoke);
     color: var(--c-raspberrysorbet);
-    margin: -2em 0 0 0;
-    padding: 0 0 0 1em;
-    border-radius: 10px;
+    margin: -3em 0 0 0;
+    padding: 0 0 0 2em;
+    border-radius: 11px;
     text-align: end;
 }
 
@@ -148,19 +148,19 @@ h5 {
 .btn-primary:visited {
     color: var(--c-whitesmoke) !important;
     background-color: var(--c-raspberrysorbet);
-    border: .1em solid var(--c-draspberrysorbet);
-    border-radius: 10px;
-    box-shadow: 8px 10px 10px var(--c-shadow);
-    margin: .5em 1em 1em 0;
+    border: .2em solid var(--c-draspberrysorbet);
+    border-radius: 11px;
+    box-shadow: 9px 11px 11px var(--c-shadow);
+    margin: .6em 2em 2em 0;
     cursor: pointer;
 }
 
 .btn-primary:hover {
     color: var(--c-whitesmoke) !important;
     background-color: var(--c-ddraspberrysorbet);
-    border: .1em solid var(--c-dddraspberrysorbet);
-    box-shadow: 8px 15px 10px var(--c-shadow);
-    transform: scale(1.04);
+    border: .2em solid var(--c-dddraspberrysorbet);
+    box-shadow: 9px 16px 11px var(--c-shadow);
+    transform: scale(1.05);
 }
 
 .btn-secondary,
@@ -168,18 +168,18 @@ h5 {
 .btn-secondary:visited {
     color: var(--c-whitesmoke) !important;
     background-color: var(--c-dmarigold);
-    border: .1em solid var(--c-ddmarigold);
-    border-radius: 10px;
-    box-shadow: 8px 10px 10px var(--c-shadow);
-    margin: .5em 1em 1em 0;
+    border: .2em solid var(--c-ddmarigold);
+    border-radius: 11px;
+    box-shadow: 9px 11px 11px var(--c-shadow);
+    margin: .6em 2em 2em 0;
     cursor: pointer;
 }
 
 .btn-secondary:hover {
     background-color: var(--c-dmarigold);
-    border: .1em solid var(--c-ddmarigold);
-    box-shadow: 8px 15px 10px var(--c-shadow);
-    transform: scale(1.04);
+    border: .2em solid var(--c-ddmarigold);
+    box-shadow: 9px 16px 11px var(--c-shadow);
+    transform: scale(1.05);
 }
 
 .btn-warning,
@@ -187,18 +187,18 @@ h5 {
 .btn-warning:visited {
     color: var(--c-whitesmoke) !important;
     background-color: var(--c-frenchblue);
-    border: .1em solid var(--c-dfrenchblue);
-    border-radius: 10px;
-    box-shadow: 8px 10px 10px var(--c-shadow);
-    margin: .5em 1em 1em 0;
+    border: .2em solid var(--c-dfrenchblue);
+    border-radius: 11px;
+    box-shadow: 9px 11px 11px var(--c-shadow);
+    margin: .6em 2em 2em 0;
     cursor: pointer;
 }
 
 .btn-warning:hover {
     background-color: var(--c-dfrenchblue);
-    border: .1em solid var(--c-ddfrenchblue);
-    box-shadow: 8px 15px 10px var(--c-shadow);
-    transform: scale(1.04);
+    border: .2em solid var(--c-ddfrenchblue);
+    box-shadow: 9px 16px 11px var(--c-shadow);
+    transform: scale(1.05);
 }
 
 .footer {
@@ -207,11 +207,11 @@ h5 {
     bottom: 0;
     width: 100%;
     text-align: center;
-    border-top: 3pt solid var(--c-raspberrysorbet);
+    border-top: 4pt solid var(--c-raspberrysorbet);
 }
 
 .footer p {
-    padding-top: 1em;
+    padding-top: 2em;
     color: var(--c-silver);
 
 }
@@ -229,7 +229,7 @@ h5 {
 /*MediaQueries*/
 @media screen and (max-width: 281px){
     main {
-    padding-top: 8rem;
+    padding-top: 9rem;
 }
 }
 
