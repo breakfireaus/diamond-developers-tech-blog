@@ -34,29 +34,22 @@ Visit https://diamond-developers-tech-blog.herokuapp.com/ to use this app.
 
 ## Usage
 
-- Sign in / homepage screenshot
+- homepage screenshot
 
-![Homepage/sign in page](./assets/readme/Screenshot-1.jpg)
+![Homepage screenshot](./assets/images/Screenshot-1.jpg)
 
-- Signup page Screenshot
+- Signin page Screenshot
 
-![Signup page](./assets/readme/Screenshot-2.jpg)
+![Signin page screenshot](./assets/images/Screenshot-2.jpg)
 
-- Dashboard page
+- sign up page
 
-![Dashboard page](./assets/readme/Screenshot-3.jpg)
+![signup page screenshot](./assets/images/Screenshot-3.jpg)
 
-- Search result page
+- add/display comment page
 
-![Search result page](./assets/readme/Screenshot-4.jpg)
+![add/display comments page screenshot](./assets/images/Screenshot-5.jpg)
 
-- Booking page
-
-![Booking page](./assets/readme/Screenshot-5.jpg)
-
-- Add a service Modal
-
-![Add a service modal](./assets/readme/Screenshot-6.jpg)
 
 ## Credits
 

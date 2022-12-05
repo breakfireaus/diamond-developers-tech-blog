@@ -28,7 +28,9 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/newArticle', withAuth, async (req, res) => {
   if (req.session.logged_in) {
-    res.render('newArticle');
+    res.render('newArticle', {
+      logged_in: req.session.logged_in,
+    });
   } else {
   res.redirect('/signin');
   }
