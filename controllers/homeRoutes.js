@@ -65,7 +65,7 @@ router.get('/articles/:id', async (req, res) => {
     });
 
     const articleSingle = DataforArticle.get({ plain: true });
-
+    console.log(articleSingle)
     res.render('viewArticle', { 
       articleSingle, 
       logged_in: req.session.logged_in 

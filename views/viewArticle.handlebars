@@ -36,12 +36,12 @@
 
 <div class='container-fluid'>
 
-  {{#if articleSingle.Comments.length}}
-  {{#each articleSingle.Comments as |comment|}}
+ 
+  {{#each articleSingle.userComments as |comment|}}
   <section class='comments-view'>
     <div class='col-12'>
       <div class='my-3' data-id='{{comment.id}}'>
-        <p class='comment' id='content'>{{comment.content}}<br>
+        <p class='comment' id='content'>{{comment.user_content}}<br>
           <small class='align-text-right'>- Posted by {{comment.user.username}} on {{format_date comment.created_at}}</small>
           <div class='edit-btns-comments'>
             <small class='btn btn-update' data-id='{{comment.id}}'>update</small> | 
@@ -52,7 +52,7 @@
     </div>
   </section>
   {{/each}}
-  {{/if}}
+
 </div>
 
 </div>
