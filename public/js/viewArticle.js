@@ -1,38 +1,76 @@
-const updateArticleFormHandlers = async (event) => {
-    event.preventDefault();
-  
-    const id = document.getElementById('btn-save').getAttribute('data-id');
-    const articleTitle = document.getElementById('articleTitle').value.trim();
-    const articleContent = document.getElementById('articleContent').value.trim();
-  
-    if (id && articleTitle && articleContent) {
-      const response = await fetch(`/api/articles/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({ articleTitle, articleContent }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        console.log(err);
-        alert('Failed to update article.');
-      }
+const newHandlerCommentForm = async (event) => {
+  event.preventDefault();
+
+  const article_id = document.getElementById('btn-comment').getAttribute('data-id');
+  const content = document.getElementById('newCommentContent').value.trim();
+
+  if (content) {
+    const response = await fetch('/api/comments', {
+      method: 'POST',
+      body: JSON.stringify({ content, article_id }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    if (response.ok) {
+      document.location.reload();
     } else {
-      alert('Title and Content fields may not be blank.')
+      alert(response.statusText);
     }
-  };
-  
-  const cancelButtonHandlers = async () => {
-    document.location.replace('/dashboard');
   }
-  
-  document
-    .querySelector('.newCommentForm')
-    .addEventListener('submit', updateArticleFormHandlers);
-  
-  document
-    .querySelector('.newCommentForm')
-    .addEventListener('reset', cancelButtonHandlers);
+};
+
+const updateHandlerButton = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/comments/${id}`, {
+      method: 'GET',
+    });
+
+    if (response.ok) {
+      document.location.replace(`/updateComment/${id}`);
+    } else {
+      alert('You can only update your own comment');
+    }
+  } else {
+    alert('no data-id for this Update button ');
+  }
+};
+
+const deleteHandlerButton = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/comments/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert('You may only delete your own comments.');
+    }
+  } else {
+    alert('Delete button did not have a data-id');
+  }
+};
+
+const cancelHandlerButton = async () => {
+  document.location.replace('/viewArticle');
+}
+
+document
+  .querySelector('.newCommentForm')
+  .addEventListener('submit', newHandlerCommentForm);
+
+document
+  .querySelector('#btn-cancel')
+  .addEventListener('reset', cancelHandlerButton);
+
+document
+  .querySelectorAll('.btn-update')
+  .forEach(btn => btn.addEventListener('click', updateHandlerButton));
+
+document
+  .querySelectorAll('.btn-delete')
+  .forEach(btn => btn.addEventListener('click', deleteHandlerButton));
