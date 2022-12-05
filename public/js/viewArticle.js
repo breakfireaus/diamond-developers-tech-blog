@@ -30,9 +30,9 @@ const updateArticleFormHandlers = async (event) => {
   }
   
   document
-    .querySelector('.updateArticleForm')
+    .querySelector('.newCommentForm')
     .addEventListener('submit', updateArticleFormHandlers);
   
   document
-    .querySelector('.updateArticleForm')
+    .querySelector('.newCommentForm')
     .addEventListener('reset', cancelButtonHandlers);
